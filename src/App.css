@@ -9,7 +9,7 @@
   background-color: #0b5402;
   color: white;
   border-radius: 0.5rem;
-  margin-top: 10rem;
+  margin-top: 1rem;
   padding: 5rem;
   border: 4px solid #aaaaaa;
 }
@@ -113,10 +113,24 @@
   justify-content: space-around;
 }
 
-.homeButtons__touchdown,
+/*.homeButtons__touchdown,
 .homeButtons__fieldGoal,
 .awayButtons__touchdown,
-.awayButtons__fieldGoal {
+.awayButtons__fieldGoal */
+
+button {
   margin: 1rem;
   border-radius: 4px;
+}
+
+.setters {
+  width: 58%;
+  margin: 5rem auto;
+  background-color: #0b5402;
+  color: white;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 5rem;
+  border: 4px solid #aaaaaa;
 }
