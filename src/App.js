@@ -19,27 +19,21 @@ function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [lionsScore, setLionsScore] = useState(0);
   const [tigersScore, setTigersScore] = useState(0);
+  const [time, setTime] = useState("00:00");
+  const [down, setDown] = useState(1);
+  const [toGo, setToGo] = useState(10);
+  const [ballOn, setBallOn] = useState(0);
+  const [quarter, setQuarter] = useState(1);
 
   return (
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
           <ScoreContainer team="Lions" homeOrAway="home" score={lionsScore} />
-          {/*<div className="home">
-            <h2 className="home__name">Lions</h2>*/}
-
-          {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
-
-          {/*<div className="home__score">{lionsScore}</div>
-          </div>*/}
-          <div className="timer">00:03</div>
+          <div className="timer">{time}</div>
           <ScoreContainer team="Tigers" homeOrAway="away" score={tigersScore} />
-          {/*<div className="away">
-            <h2 className="away__name">Tigers</h2>
-            <div className="away__score">{tigersScore}</div>
-          </div>*/}
         </div>
-        <BottomRow />
+        <BottomRow down={down} toGo={toGo} ballOn={ballOn} quarter={quarter} />
       </section>
       <section className="buttons">
         <div className="homeButtons">
