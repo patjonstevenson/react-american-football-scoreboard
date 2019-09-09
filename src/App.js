@@ -3,6 +3,18 @@ import React, { useState } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 
+function ScoreContainer(props) {
+  return (
+    <div className={props.homeOrAway}>
+      <h2 className={props.homeOrAway + "__name"}>{props.team}</h2>
+
+      {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
+
+      <div className="home__score">{props.score}</div>
+    </div>
+  );
+}
+
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [lionsScore, setLionsScore] = useState(0);
@@ -12,18 +24,20 @@ function App() {
     <div className="container">
       <section className="scoreboard">
         <div className="topRow">
-          <div className="home">
-            <h2 className="home__name">Lions</h2>
+          <ScoreContainer team="Lions" homeOrAway="home" score={lionsScore} />
+          {/*<div className="home">
+            <h2 className="home__name">Lions</h2>*/}
 
-            {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
+          {/* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */}
 
-            <div className="home__score">{lionsScore}</div>
-          </div>
+          {/*<div className="home__score">{lionsScore}</div>
+          </div>*/}
           <div className="timer">00:03</div>
-          <div className="away">
+          <ScoreContainer team="Tigers" homeOrAway="away" score={tigersScore} />
+          {/*<div className="away">
             <h2 className="away__name">Tigers</h2>
             <div className="away__score">{tigersScore}</div>
-          </div>
+          </div>*/}
         </div>
         <BottomRow />
       </section>
