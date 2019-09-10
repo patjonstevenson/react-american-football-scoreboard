@@ -77,18 +77,6 @@ function App() {
 
   return (
     <div className="container">
-      <section class="setters">
-        <TeamSetter
-          homeOrAway="Home"
-          setTeam={setHomeTeam}
-          setTeamScore={setHomeScore}
-        />
-        <TeamSetter
-          homeOrAway="Away"
-          setTeam={setAwayTeam}
-          setTeamScore={setAwayScore}
-        />
-      </section>
       <section className="scoreboard">
         <div className="topRow">
           <ScoreContainer team={homeTeam} homeOrAway="home" score={homeScore} />
@@ -127,6 +115,18 @@ function App() {
             Away Field Goal
           </button>
         </div>
+      </section>
+      <section class="setters">
+        <TeamSetter
+          homeOrAway="Home"
+          setTeam={setHomeTeam}
+          setTeamScore={setHomeScore}
+        />
+        <TeamSetter
+          homeOrAway="Away"
+          setTeam={setAwayTeam}
+          setTeamScore={setAwayScore}
+        />
       </section>
     </div>
   );
